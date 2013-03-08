@@ -1,0 +1,25 @@
+<% if @current_user %>
+	<div class="row">
+		<div class="span4">
+			<h2>Welcome to Weight Track: <%= @current_user.username %></h2>
+			<% if @current_user.avatar.url %>
+				<%= image_tag @current_user.avatar.url(:medium) %>
+			<% end %>
+		</div>
+		<div class="span4">
+			<h4>What do you want to do?</h4>
+			<a href="<%= url_for(:controller => 'workouts', :action => 'all') %>"><button type="button" class="btn btn-primary">Show all Workouts</button></a>
+			<a href="<%= url_for(:controller => 'workouts', :action => 'new') %>"><button type="button" class="btn btn-primary">New Workout</button></a>
+		</div>
+	</div>
+<% else %>
+	<div class="row">
+		<div class="span4">
+			<h2>Welcome to Weight Track! <%= link_to 'Join', :controller => "users", :action => "new" %> To get started.</h2>
+		</div>
+		<div class="span4 offset1">
+			<h4>Already a user?</h4>
+			<a href="<%= url_for(:controller => 'sessions', :action => 'new') %>"><button type="button" class="btn btn-primary">Login</button></a>
+		</div>
+	</div>
+<% end %>

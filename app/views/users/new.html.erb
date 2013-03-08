@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="span4">
+		<%= form_for @user, :html => { :multipart => true}, :class => "form-horizontal", :url => {:action => "create"} do |user_form| %>
+			<div class="control-group">
+				<label class="control-label" for="inputUsername">Username</label>
+				<div class="controls">
+					<%= user_form.text_field(:username, :id => "inputUsername", :placeholder => "Username") %>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="inputEmail">Email</label>
+				<div class="controls">
+					<%= user_form.email_field(:email, :id => "inputEmail", :placeholder => "Email") %>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="inputPassword">Password</label>
+				<div class="controls">
+					<input type="password" id="inputPassword" name="password">
+				</div>
+			</div>
+			<%= user_form.file_field :avatar %>
+			<%= user_form.submit :class => "btn btn-primary" %>
+		<% end %>
+	</div>
+</div>

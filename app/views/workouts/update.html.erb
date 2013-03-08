@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="span4">
+		<%= form_for @workout, :class => "form-horizontal", :url => {:action => "change"} do |workout_form| %>
+			<div class="control-group">
+				<label class="control-label" for="inputName">Name</label>
+				<div class="controls">
+					<%= workout_form.text_field(:name, :id => "inputName", :placeholder => "Name of workout") %>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class"control-label" for="inputWeight">Weight</label>
+				<div class="controls">
+					<%= workout_form.text_field(:weight, :id => "weightName", :placeholder => "Weight") %>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="inputSets">Sets</label>
+				<div class="controls">
+					<%= workout_form.text_field(:sets, :id => "inputSets", :placeholder => "Sets") %>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="inputReps">Reps</label>
+				<div class="controls">
+					<%= workout_form.text_field(:reps, :id => "inputReps", :placeholder => "Reps") %>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="inputPlateau">Last Plateau Date</label>
+				<div class="controls">
+					<%= workout_form.text_field(:last_plateau_date, :id => "inputPlateau", :placeholder => "last plateau date") %>
+				</div>
+			</div>
+			<%= workout_form.submit :class => "btn btn-primary" %>
+		<% end %>
+	</div>
+</div>
