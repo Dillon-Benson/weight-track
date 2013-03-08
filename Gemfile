@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'bcrypt-ruby'
 gem 'email_validator'
 gem 'pg'
+gem "heroku"
 gem "paperclip", "~> 3.0"
 
 # Gems used only for assets and not required
