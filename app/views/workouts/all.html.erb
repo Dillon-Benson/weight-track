@@ -2,7 +2,7 @@
 	<h2>You don't have any workouts</h2>
 	<a href="<%= url_for(:controller => 'workouts', :action => 'new') %>"><button type="button" class="btn btn-primary">Create one</button></a>
 <% else %>
-	<% @current_user.workouts.each_with_index do |workout, index| %>
+	<% @current_user.workouts.reverse.each_with_index do |workout, index| %>
 	<ul>
 		<h1><%= workout.name %></h1>
 		<h3><%= link_to 'Show', :controller => "workouts", :action => "show", :id => workout %></h3>
@@ -10,4 +10,5 @@
 	</ul>
 	<hr>
 	<% end %>
+	<a href="<%= url_for(:controller => 'workouts', :action => 'new') %>"><button type="button" class="btn btn-primary">Create New Workout</button></a>
 <% end %>
